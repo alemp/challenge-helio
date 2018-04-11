@@ -1,0 +1,7 @@
+var person = {
+	firstName: "John",
+	getName: function () {
+		console.log(this.firstName);
+	}
+};
+person.getName(); 

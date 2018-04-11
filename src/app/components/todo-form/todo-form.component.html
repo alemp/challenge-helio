@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <form [formGroup]="todoForm">
+        <div class="input-group form-group">
+          <input id="name" #inputName class="form-control form-control-lg" type="text" placeholder="Type to search or create new item (Enter to create)" formControlName="name" required (keyup)="search(name.value)" (keyup.enter)="addTodo(name.value)" >
+        </div>
+      </form>
+      <app-todo-items></app-todo-items>
+  </div>
+</div>

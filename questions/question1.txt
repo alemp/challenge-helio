@@ -1,0 +1,25 @@
+var posts = [];
+
+var request = function(callback) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState === 4 && this.status === 200) {
+      posts = JSON.parse(this.responseText);
+      callback(null, posts)
+    }
+    if (this.readyState === 4 && this.status !== 200) {
+      callback(this.status, [])
+    }
+  };
+
+  xhttp.open('GET', 'https://jsonplaceholder.typicode.com/posts', true);
+  xhttp.send();
+};
+
+var displayPostsCount = function(posts) {
+  alert(posts.length);
+};
+
+request(function(err, callback) {
+  displayPostsCount(posts);
+});

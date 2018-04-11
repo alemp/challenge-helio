@@ -1,0 +1,25 @@
+<li class="todo-item">
+    <div class="todo-container-fluid">
+      <div class="row">
+        <div class="col-6">
+            {{ item.name }}
+        </div>
+        <div class="col-6">
+            <button type="button" class="btn btn-light" (click)="done(item)" ngbTooltip="Make item done/undone">
+                <i [hidden]="item.isMarkedAsDone" class="far fa-square"></i>
+                <i [hidden]="!item.isMarkedAsDone" class="far fa-check-square"></i>
+                Done
+            </button>
+            <button type="button" class="btn btn-light" (click)="delete(item)" ngbTooltip="Delete item">
+                <i class="far fa-trash-alt"></i>
+            </button>
+            <button type="button" class="btn btn-light" (click)="priorityUp(item)" ngbTooltip="Set priority up">
+                <i class="fas fa-caret-up"></i>
+            </button>
+            <button type="button" class="btn btn-light" (click)="priorityDown(item)" ngbTooltip="Set priority down">
+                <i class="fas fa-caret-down"></i>
+            </button>
+        </div>
+      </div>
+    </div>
+  </li>

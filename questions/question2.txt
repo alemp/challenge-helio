@@ -1,0 +1,14 @@
+var employees = [
+	{ name: 'John', surname: 'Doe', gender: 'Male', salary: 10000 },
+	{ name: 'Jane', surname: 'Doe', gender: 'Female', salary: 12000 },
+	{ name: 'Wendy', surname: 'Darling', gender: 'Female', salary: 20000 },
+	{ name: 'Peter', surname: 'Pan', gender: 'Male', salary: 25000 },
+];
+
+var updateEmployee = function (indexOldEmployee, newEmployee) {
+	employees[indexOldEmployee] = newEmployee;
+};
+
+var newEmployee = { name: 'Another', surname: 'Employee', gender: 'Female', salary: 15000 };
+updateEmployee(1, newEmployee);
+console.log(employees[1]);
